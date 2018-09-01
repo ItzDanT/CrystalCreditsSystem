@@ -20,6 +20,7 @@ if (err) console.error(err);
 })
 });
 client.on("message", (message) => {
+	var prefix = "-";
   let men = message.mentions.users.first()
   if (message.author.bot) return;
     if (message.author.id === client.user.id) return;
