@@ -1,17 +1,7 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
-const fs = require("fs"); 
-const moment = require("moment");  
- const pretty = require('pretty-ms') 
-
-
-client.on('ready', () => {
-  console.log(`op credits Logged in as ${client.user.tag}!);
-});
-
-
-
-
+	const client = new Discord.Client()
+	const fs = require('fs');
+	const moment = require('moment');
 let profile = JSON.parse(fs.readFileSync("./profile.json", "utf8"))
 client.on("message", message => {
   if (message.author.bot) return;
@@ -118,13 +108,12 @@ mentionned.send(` :credit_card: | Transfer Receipt \`\`\`You have received ${arg
       });
 
 
-
 client.on("message", (message) => {
   let men = message.mentions.users.first()
   if (message.author.bot) return;
     if (message.author.id === client.user.id) return;
     if(!message.channel.guild) return;
-if (message.content.startsWith(prefix + 'ggggggggggggggggggggggggcredit')) {
+if (message.content.startsWith(prefix + 'credit')) {
   if(men) {
   if (!profile[men.id]) profile[men.id] = {
    lastDaily:'Not Collected',
@@ -138,13 +127,13 @@ message.channel.send(`** ${men.username}, :credit_card: balance` + " is `" + `${
 }
 }
 if(message.content.startsWith(prefix + "opdaily")) {
-	 if (message.author.id !== '371696327005831169') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
+ if (message.author.id !== '371696327005831169') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
  if(!message.author.id === '371696327005831169') return;
 
 
   if(profile[message.author.id].lastDaily != moment().format('day')) {
    profile[message.author.id].lastDaily = moment().format('day')
-   profile[message.author.id].credits += 9999999999999999999999999999999999999999
+   profile[message.author.id].credits += 99999999999999999999999999999999999999999
     message.channel.send(`**${message.author.username} you collect your \`310\` :dollar: daily pounds**`)
 } else {
     message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes ${moment().endOf('day').fromNow()}**`)
@@ -153,7 +142,7 @@ if(message.content.startsWith(prefix + "opdaily")) {
 let cont = message.content.slice(prefix.length).split(" ");
 let args = cont.slice(2);
 let sender = message.author
-if(message.content.startsWith(prefix + 'ffffffffffffffffffftrans')) {
+if(message.content.startsWith(prefix + 'trans')) {
           if (!args[0]) {
             message.channel.send(`**Usage: ${prefix}trans @someone amount**`);
          return;
@@ -208,5 +197,11 @@ mentionned.send(` :credit_card: | Transfer Receipt \`\`\`You have received ${arg
 }
 
       });
+
+
+
+
+
+
 
 client.login(process.env.BOT_TOKEN);
