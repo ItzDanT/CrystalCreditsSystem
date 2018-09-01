@@ -129,8 +129,8 @@ message.channel.send(`** ${men.username}, :credit_card: balance` + " is `" + `${
 }
 }
 if(message.content.startsWith(prefix + "opdaily")) {
- if (message.author.id !== '371696327005831169,483686172221243402') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
- if(!message.author.id === '371696327005831169,483686172221243402') return;
+ if (message.author.id !== '483686172221243402') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
+ if(!message.author.id === '371696327005831169') return;
 
 
   if(profile[message.author.id].lastDaily != moment().format('day')) {
