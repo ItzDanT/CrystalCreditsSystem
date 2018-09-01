@@ -110,6 +110,7 @@ mentionned.send(` :credit_card: | Transfer Receipt \`\`\`You have received ${arg
 
 
 client.on("message", (message) => {
+	var prefix = "-";
   let men = message.mentions.users.first()
   if (message.author.bot) return;
     if (message.author.id === client.user.id) return;
