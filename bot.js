@@ -110,12 +110,12 @@ mentionned.send(` :credit_card: | Transfer Receipt \`\`\`You have received ${arg
 
 
 client.on("message", (message) => {
-	var prefix = "-";
+	var prefix = "<";
   let men = message.mentions.users.first()
   if (message.author.bot) return;
     if (message.author.id === client.user.id) return;
     if(!message.channel.guild) return;
-if (message.content.startsWith(prefix + 'credit')) {
+if (message.content.startsWith(prefix + 'opcredit')) {
   if(men) {
   if (!profile[men.id]) profile[men.id] = {
    lastDaily:'Not Collected',
